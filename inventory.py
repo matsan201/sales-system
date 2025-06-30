@@ -1,5 +1,21 @@
+from tkinter import *
+import tkinter as tk
+from tkinter import  ttk, messagebox
 
 
-class Inventory():
-    def __init__(self):
-        pass
+
+class Inventory(tk.Frame):
+    def __init__(self, father):
+        super().__init__(father)
+        self.pack()
+        self.widgets()
+
+
+    def widgets(self):
+        frame1 = tk.Frame(self, bg="#dddddd", highlightbackground="gray", highlightthickness=1)
+        frame1.pack()
+        frame1.place(x=0, y=0, width=1100, height=100)
+
+        title = tk.Label(self, text="Inventarios", bg="#dddddd",  font="sans 30 bold")
+        title.pack()
+        title.place(x=5, y=0, width=1090, height=90)
