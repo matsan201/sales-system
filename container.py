@@ -10,6 +10,7 @@ class Container(tk.Frame):
         self.pack()
         self.place(x=0, y=0, width=800, height=400)
         self.config(bg="#C6D9E3")
+        self.widgets()
 
     def show_frames(self, container):
         top_level = tk.Toplevel(self)
@@ -24,3 +25,15 @@ class Container(tk.Frame):
 
     def inventory(self):
         self.show_frames(Inventory)
+
+    def widgets(self):
+        frame1 = tk.Frame(self, bg="#C6D9E3")
+        frame1.pack()
+        frame1.place(x=0, y=0, width=800, height=400)
+
+        btn_sales = Button(frame1, bg="green", fg="black", text="Ir a ventas", command=self.sales)
+        btn_sales.place(x=500, y=30, width=240, height=60)
+
+        btn_inventory = Button(frame1, bg="green", fg="white", text="Ir a Inventario", command=self.inventory)
+        btn_inventory.place(x=500, y=130, width=240, height=60)
+
