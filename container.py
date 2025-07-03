@@ -21,6 +21,11 @@ class Container(tk.Frame):
         top_level.geometry("1100x650+120+20")
         top_level.resizable(False, False)
 
+        top_level.transient(self.master)
+        top_level.grab_set()
+        top_level.focus_set()
+        top_level.lift()
+
     def sales(self):
         self.show_frames(Sales)
 
@@ -45,5 +50,5 @@ class Container(tk.Frame):
         self.logo_label.place(x=100, y=30)
 
 
-        copyright_label = tk.Label(frame1, text="© 2025. Todos los derechos reservados", font="sans 12 bold", bg="#C6D9E3", fg="gray")
+        copyright_label = tk.Label(frame1, text="© 2025 Tech Sanz. Todos los derechos reservados", font="sans 12 bold", bg="#C6D9E3", fg="gray")
         copyright_label.place(x=180, y=350)
