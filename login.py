@@ -6,7 +6,7 @@ class Login(tk.Tk):
     def __init__(self):
         super().__init__()
         self.title("Sistema de Ventas - Login")
-        self.geometry("400x300+500+200")
+        self.geometry("450x400+500+200")  # Aumentado el tamaño
         self.resizable(False, False)
         self.configure(bg="#2C3E50")
         
@@ -44,7 +44,7 @@ class Login(tk.Tk):
         """Crea los elementos de la interfaz de login"""
         # Frame principal
         main_frame = tk.Frame(self, bg="#2C3E50")
-        main_frame.pack(expand=True, fill="both", padx=40, pady=40)
+        main_frame.pack(expand=True, fill="both", padx=30, pady=30)  # Reducido padding
         
         # Título
         title_label = tk.Label(
@@ -68,7 +68,7 @@ class Login(tk.Tk):
         
         # Frame para los campos
         fields_frame = tk.Frame(main_frame, bg="#2C3E50")
-        fields_frame.pack(pady=10)
+        fields_frame.pack(pady=15, expand=True)  # Agregado expand=True
         
         # Campo Usuario
         user_label = tk.Label(
@@ -88,7 +88,7 @@ class Login(tk.Tk):
             relief="flat",
             bd=5
         )
-        self.user_entry.grid(row=1, column=0, pady=(0, 15))
+        self.user_entry.grid(row=1, column=0, pady=(0, 20))  # Aumentado espacio
         self.user_entry.focus()
         
         # Campo Contraseña
@@ -110,7 +110,7 @@ class Login(tk.Tk):
             relief="flat",
             bd=5
         )
-        self.pass_entry.grid(row=3, column=0, pady=(0, 20))
+        self.pass_entry.grid(row=3, column=0, pady=(0, 15))  # Reducido espacio inferior
         
         # Botones
         buttons_frame = tk.Frame(main_frame, bg="#2C3E50")
@@ -144,14 +144,14 @@ class Login(tk.Tk):
         )
         cancel_button.pack(side=tk.LEFT)
         
-        # Información de usuarios de prueba
+        # Información de usuarios de prueba - movida al final
         info_frame = tk.Frame(main_frame, bg="#2C3E50")
-        info_frame.pack(side=tk.BOTTOM, pady=(20, 0))
+        info_frame.pack(side=tk.BOTTOM, pady=(10, 0))  # Reducido padding
         
         info_label = tk.Label(
             info_frame,
             text="Usuarios de prueba:\nadmin/admin123 | cajero/cajero123 | gerente/gerente123",
-            font=("Arial", 8),
+            font=("Arial", 7),  # Reducido tamaño de fuente
             fg="#95A5A6",
             bg="#2C3E50",
             justify=tk.CENTER
